@@ -6,6 +6,6 @@
 </head>
 <body>
        <h1>{{$data['title']}}</h1>
-       <p>{{$data['text']}}</p>
+       <p><a href="http://cron.loc/news/{{$data['id']}}">Перейти по ссылке</a></p>
 </body>
 </html>

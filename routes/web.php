@@ -22,3 +22,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/create', 'HomeController@create');
 
 Route::post('/create', 'HomeController@store');
+
+Route::get('/news/{id}', function ($id){
+    $n=App\News::find($id);
+    return view("news")->with(compact("n"));
+});

@@ -37,11 +37,14 @@ class HomeController extends Controller
         return view("createNews");
     }
 
+
+
+
     public function store(Request $request)
     {
-        $nArr=array("id"=> $request->id, "title"=>$request->title, "text"=>$request->text);
         $n=new News($request->all());
         $n->save();
+        $nArr=array("id"=> $n->id, "title"=>$n->title, "text"=>$n->text);
         $users=User::where("signature", 1)->get();
         foreach($users as $user)
         {
