@@ -74,6 +74,23 @@
                             </div>
                         </div>
 
+
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 control-label">Signature</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="checkbox" class="form-control" name="signature" value="1"  autofocus>
+
+                                @if ($errors->has('signature'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('signature') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
