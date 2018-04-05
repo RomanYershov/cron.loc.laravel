@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->date("dob");
             $table->boolean("signature")->default(0);
-            $table->string("signCode", 30);
+            $table->string("signCode", 30)->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -6,7 +6,7 @@
 </head>
 <body>
        <h1>{{$data['title']}}</h1>
-       <p><a href="http://cron.loc/news/{{$data['id']}}">Для просмотра новости пройдите по ссылке</a></p>
-       <p><a href="http://cron.loc/home/{{$data['user_id']}}">Отписаться от рассылки.</a></p>
+       <p><a href="http://cron.loc:8090/news/{{$data['id']}}">Для просмотра новости пройдите по ссылке</a></p>
+       <p><a href="http://cron.loc:8090/home/{{$data['sign_code']}}">Отписаться от рассылки.</a></p>
 </body>
 </html>

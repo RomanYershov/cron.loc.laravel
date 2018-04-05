@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\User;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,9 +30,12 @@ Route::get('/news/{id}', function ($id){
     return view("news")->with(compact("n"));
 });
 
-Route::get('/home/{id}', function ($id){
-    $user=\App\User::find($id);
+Route::get('/home/{sign_code}', function ($signCode){
+    $user=User::where("signCode", $signCode )->first();
     $user->signature=0;
+    $user->signCode=null;
     $user->save();
     return "Вы успешно отписались от рассылки на новости";
 });
+
+Route::get('/export', 'HomeController@export')->name("export");
