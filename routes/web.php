@@ -27,3 +27,10 @@ Route::get('/news/{id}', function ($id){
     $n=App\News::find($id);
     return view("news")->with(compact("n"));
 });
+
+Route::get('/home/{id}', function ($id){
+    $user=\App\User::find($id);
+    $user->signature=0;
+    $user->save();
+    return "Вы успешно отписались от рассылки на новости";
+});

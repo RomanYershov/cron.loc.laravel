@@ -48,6 +48,7 @@ class HomeController extends Controller
         $users=User::where("signature", 1)->get();
         foreach($users as $user)
         {
+            $nArr["user_id"]=$user->id;
             Mail::to($user->email)->send(new NewsSign($nArr));
         }
     }
